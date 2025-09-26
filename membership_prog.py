@@ -1,0 +1,1 @@
+print("covid"not in [27,"covid",2.5,"python"])

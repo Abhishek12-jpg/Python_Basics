@@ -1,0 +1,1 @@
+print(list(range(7,-3,-1)))
