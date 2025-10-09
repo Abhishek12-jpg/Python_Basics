@@ -1,4 +1,13 @@
 students=[]
+def calculate_grade(avg):
+    if avg >= 90:
+        return "Grade A"
+    elif avg >= 80:
+        return "Grade B"
+    elif avg >= 70:
+        return "Grade C"
+    else:
+        return "Grade F"
 
 def add_student():
     std={}
@@ -8,19 +17,32 @@ def add_student():
         mark=int(input(f"Enter the subject {s} : "))
         marks=marks+[mark]
     print(marks)
+
     
     total=0
     for k in marks:
         total=total+k
     avg=total/3
+    grd = calculate_grade(avg)
+    
+
+
+
     std["name"]=name
     std['marks']=marks
     std["total"]=total
     std["average"]=avg
+    std["grade"]=grd
+
+
+
 
     students.append(std)
     print(students)
     print("Students added successfully")
+
+
+  
 
 
 def display_students():
@@ -30,13 +52,30 @@ def display_students():
         print("Mark : ",s['marks'])
         print("Total marks : ",s["total"])
         print("Average : ",s['average'])
+        print("grade : ",s['grade'])
         print("\n---------------------")
+
+
+def search_student():
+    name=input("Enter the name :")
+    
+
+
+
+
+
+
 while True:
-    print("1. Add Student\n2. Display All students\n3.Search student\n4.Exit")
+    print("1. Add Student\n2. Display All students\n3.calculate_grade\n4.Search student\n5.Exit")
     choice=int(input("Enter your choice : "))
     if choice==1:
         add_student()
     elif choice==2:
         display_students()
-    if choice==4:
+    elif choice==3:
+        calculate_grade()
+    elif choice==4:
+        search_student()
+
+    if choice==5:
         break
