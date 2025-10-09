@@ -58,24 +58,23 @@ def display_students():
 
 def search_student():
     name=input("Enter the name :")
-    
-
-
-
-
-
+    for st in students:
+        if st["name"]==name:
+            print("student name:",st['name'])
+            print("Mark : ",st['marks'])
+            print("Total marks : ",st["total"])
+            print("Average : ",st['average'])
+            print("grade : ",st['grade'])
+            print("\n---------------------")
 
 while True:
-    print("1. Add Student\n2. Display All students\n3.calculate_grade\n4.Search student\n5.Exit")
+    print("1. Add Student\n2. Display All students\n3.Search student\n4.Exit")
     choice=int(input("Enter your choice : "))
     if choice==1:
         add_student()
     elif choice==2:
         display_students()
     elif choice==3:
-        calculate_grade()
-    elif choice==4:
         search_student()
-
-    if choice==5:
+    if choice==4:
         break
